@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1b2a">
+<meta name="color-scheme" content="dark">
+<title>Cierlou Tudtud — Website developer, Cebu</title>
+<meta name="description" content="Website developer and virtual assistant in Cebu, Philippines. WordPress, Webflow, Shopify and Real Geeks sites for clients abroad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b2a;--navy2:#12243a;--navy3:#1a3352;--blue:#2A97FD;--blue2:#1D69B1;--cream:#f5f0e8;--muted:#8a9ab5;--f:'Archivo',system-ui,sans-serif;--m:'DM Mono',ui-monospace,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--navy);color:var(--cream);font:400 17px/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+.cream :focus-visible{outline-color:var(--navy)}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:50;background:var(--blue);color:var(--navy);padding:.7rem 1rem;font-family:var(--m);font-size:.8rem;text-transform:uppercase;text-decoration:none}
+.skip:focus{top:1rem}
+::selection{background:var(--blue);color:var(--navy)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.mono{font-family:var(--m);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+.disp{font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:-.02em;line-height:.92}
+
+header{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(13,27,42,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--blue2)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-weight:900;font-stretch:125%;font-size:1.15rem;text-decoration:none;letter-spacing:.02em}
+.logo i{display:inline-block;width:.6rem;height:.6rem;background:var(--blue);margin-left:.2rem}
+nav{display:flex;gap:1.8rem;align-items:center}
+nav a{font-family:var(--m);font-size:.78rem;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--blue)}
+nav a{padding:.6rem 0}
+nav a.hire{background:var(--blue);color:var(--navy);padding:.55rem 1rem;font-weight:500}
+nav a.hire:hover{background:var(--cream);color:var(--navy)}
+
+.hero{padding:8.5rem 0 4.5rem;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--navy2) 1px,transparent 1px),linear-gradient(90deg,var(--navy2) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%);opacity:.7}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center}
+.eyebrow{color:var(--blue);margin-bottom:1.5rem}
+h1{font-size:clamp(2.8rem,7.4vw,6.6rem)}
+h1 .o{color:transparent;-webkit-text-stroke:2px var(--blue)}
+h1 .b{color:var(--blue)}
+.lede{margin-top:1.75rem;max-width:34rem;color:var(--muted);font-size:1.1rem}
+.lede b{color:var(--cream);font-weight:600}
+.btns{display:flex;gap:.9rem;margin-top:2rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;min-height:48px;font-family:var(--m);font-size:.82rem;text-transform:uppercase;text-decoration:none;padding:.95rem 1.5rem;border:2px solid var(--blue);transition:transform .15s,box-shadow .15s}
+.btn.p{background:var(--blue);color:var(--navy);font-weight:500}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--cream)}
+.photo{position:relative;max-width:400px;margin-left:auto}
+.photo .blk{background:#2a97fd00;aspect-ratio:4/5;overflow:hidden;transform:rotate(2deg);box-shadow:12px 12px 0 var(--navy3)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:70% 0;mix-blend-mode:multiply;display:block}
+.tag{position:absolute;left:-1.5rem;bottom:2rem;background:var(--cream);color:var(--navy);padding:.6rem 1rem;transform:rotate(-4deg);font-weight:800;font-stretch:110%;text-transform:uppercase;font-size:.85rem;box-shadow:4px 4px 0 var(--navy)}
+
+.band{background:var(--blue);color:var(--navy);overflow:hidden;border-block:2px solid var(--navy);white-space:nowrap}
+.band div{display:inline-block;padding:.9rem 0;animation:slide 40s linear infinite}
+.band:hover div{animation-play-state:paused}
+.band span{font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:clamp(1.2rem,2.4vw,1.9rem);margin:0 1.3rem}
+.band span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px var(--navy)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--blue2)}
+.stats div{padding:2.2rem 1.5rem 2rem 0;border-left:1px solid var(--blue2);padding-left:1.5rem}
+.stats div:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font-weight:900;font-stretch:125%;font-size:clamp(2.4rem,5vw,4rem);color:var(--blue);line-height:1}
+.stats span{color:var(--muted)}
+
+section{padding:clamp(4rem,9vw,7rem) 0}
+.h2{font-size:clamp(2.4rem,6vw,5rem)}
+.h2 em{font-style:normal;color:var(--blue)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filters{display:flex;gap:.6rem;flex-wrap:wrap}
+.filters button{font:inherit;font-family:var(--m);font-size:.78rem;text-transform:uppercase;background:none;color:var(--cream);border:1.5px solid var(--blue2);padding:.5rem 1.1rem;min-height:44px;cursor:pointer;transition:all .15s}
+.filters button:hover{border-color:var(--blue)}
+.filters button.on{background:var(--blue);border-color:var(--blue);color:var(--navy)}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.25rem}
+.card{background:var(--navy2);border:1.5px solid var(--blue2);display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card[hidden]{display:none}
+.card:hover{transform:translate(-5px,-5px);box-shadow:9px 9px 0 var(--blue);border-color:var(--blue)}
+.card .bar{display:flex;gap:.35rem;align-items:center;padding:.5rem .75rem;border-bottom:1.5px solid var(--blue2);background:var(--navy)}
+.card .bar i{width:.55rem;height:.55rem;border-radius:50%;background:var(--navy3)}
+.card .bar span{margin-left:.6rem;font-family:var(--m);font-size:.7rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:top}
+.card .in{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.card .top{display:flex;justify-content:space-between;align-items:center;color:var(--blue)}
+.card h3{font-weight:800;font-stretch:112%;font-size:1.55rem;line-height:1.1;text-transform:uppercase;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:.95rem}
+.card .go{margin-top:auto;padding-top:.6rem;color:var(--cream)}
+.card:hover .go{color:var(--blue)}
+
+.cream{background:var(--cream);color:var(--navy)}
+.cream .h2 em{color:var(--blue2)}
+.svc{display:grid;grid-template-columns:4rem 1fr 1.2fr;gap:1.5rem;align-items:baseline;padding:1.6rem 1rem;border-top:2px solid var(--navy);transition:background .2s,color .2s}
+.svc:last-child{border-bottom:2px solid var(--navy)}
+.svc .n{font-family:var(--m);font-size:.8rem}
+.svc h3{font-weight:900;font-stretch:125%;text-transform:uppercase;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1}
+.svc p{max-width:34rem;opacity:.8}
+.svc:hover{background:var(--navy);color:var(--cream)}
+.svc:hover h3{color:var(--blue)}
+
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.about p{color:var(--muted);margin-bottom:1.1rem;max-width:36rem}
+.about p:first-of-type{color:var(--cream);font-size:1.35rem;line-height:1.45;font-weight:500}
+.job{display:grid;grid-template-columns:8.5rem 1fr;gap:1.2rem;padding:1.3rem 0;border-top:1px solid var(--blue2)}
+.job .d{font-family:var(--m);font-size:.75rem;color:var(--blue);text-transform:uppercase;padding-top:.25rem}
+.job h4{font-weight:800;font-stretch:110%;font-size:1.2rem;text-transform:uppercase}
+.job h4 small{display:block;font-family:var(--m);font-weight:400;font-size:.72rem;color:var(--muted);margin-top:.2rem;text-transform:uppercase;letter-spacing:.04em;font-stretch:100%}
+.job ul{margin-top:.6rem;padding-left:1.1rem;color:var(--muted);font-size:.94rem}
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--blue2)}
+.edu b{display:block;font-weight:700;line-height:1.3;margin-bottom:.25rem}
+.edu span{color:var(--muted);font-size:.88rem}
+
+.quotes{background:var(--blue);color:var(--navy)}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
+blockquote{border-top:3px solid var(--navy);padding-top:1.5rem}
+blockquote p{font-weight:600;font-size:clamp(1.1rem,1.8vw,1.4rem);line-height:1.45}
+blockquote footer{margin-top:1.25rem}
+
+.contact{text-align:left;padding-bottom:3rem}
+.big{font-size:clamp(1.8rem,6.6vw,5.6rem);word-break:break-word}
+.big .em{display:block;font-stretch:100%;font-size:.5em;letter-spacing:0;margin-top:.5rem;text-transform:none}
+.big a{text-decoration:none;color:var(--cream);transition:color .2s}
+.big a:hover{color:var(--blue)}
+.big a span{color:var(--blue)}
+.links{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.25rem}
+.foot{border-top:1px solid var(--blue2);padding:1.5rem 0 2rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero{padding-top:6.5rem}
+  .hero .wrap,.about,.q-grid,.grid{grid-template-columns:1fr}
+  .photo{margin:1rem auto 0;max-width:300px;order:-1}.tag{left:-.5rem}
+  .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}
+  .svc{grid-template-columns:2.5rem 1fr}.svc p{grid-column:2}
+  .job{grid-template-columns:1fr;gap:.3rem}.edu{grid-template-columns:1fr}
+  nav{gap:1rem}nav a{font-size:.72rem}nav a.sv{display:none}h1{font-stretch:105%}.band span{margin:0 .8rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.band div{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to work</a>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">CIERLOU<i></i></a>
+    <nav>
+      <a href="#work">Work</a><a class="sv" href="#services">Services</a><a href="#about">About</a>
+      <a class="hire" href="#contact">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow mono">Website developer &amp; VA &mdash; Cebu, PH</p>
+      <h1 class="disp">I build sites that <span class="o">work</span> for <span class="b">business.</span></h1>
+      <p class="lede">I'm <b>Cierlou Tudtud</b>. For 4+ years I've built and maintained WordPress, Webflow, Shopify and Real Geeks sites for clients in the US, and I stay on to keep them fast, fresh and found on Google.</p>
+      <div class="btns"><a class="btn p" href="#work">See the work &darr;</a><a class="btn" href="#contact">Get in touch</a></div>
+    </div>
+    <div class="photo">
+      <div class="blk"><img src="pfpheadshot.png" alt="Portrait of Cierlou Tudtud" width="798" height="900" fetchpriority="high"></div>
+      <div class="tag">Open to projects</div>
+    </div>
+  </div>
+</div>
+
+<div class="band" aria-hidden="true"><div id="marq"></div></div>
+
+<div class="wrap stats">
+  <div><b>4+</b><span class="mono">Years building</span></div>
+  <div><b>12</b><span class="mono">Live client sites</span></div>
+  <div><b>3</b><span class="mono">Platforms daily</span></div>
+  <div><b>100%</b><span class="mono">Remote, worldwide</span></div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 disp">Selected <em>work</em></h2>
+      <div class="filters" role="group" aria-label="Filter by platform">
+        <button class="on" aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="WordPress">WordPress</button><button aria-pressed="false" data-f="Webflow">Webflow</button><button aria-pressed="false" data-f="Real Geeks">Real Geeks</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="cream" id="services">
+  <div class="wrap">
+    <h2 class="h2 disp" style="margin-bottom:2.5rem">What I <em>do</em></h2>
+    <div>
+      <div class="svc"><span class="n">01</span><h3>WordPress</h3><p>Elementor builds, theme customization, plugin integration, WooCommerce and speed optimization.</p></div>
+      <div class="svc"><span class="n">02</span><h3>Webflow</h3><p>Responsive layouts, CMS collections, animations and clean structure that's easy for clients to edit.</p></div>
+      <div class="svc"><span class="n">03</span><h3>Shopify</h3><p>Custom stores, product and inventory management, and conversion rate optimization.</p></div>
+      <div class="svc"><span class="n">04</span><h3>Real Geeks</h3><p>Listing updates, lead management, landing pages and content upkeep for real estate agents.</p></div>
+      <div class="svc"><span class="n">05</span><h3>Salesforce</h3><p>Accurate client records and day-to-day CRM support for business operations.</p></div>
+      <div class="svc"><span class="n">06</span><h3>SEO &amp; content</h3><p>Blog management, SEO-optimized writing, graphics, analytics and reporting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2 class="h2 disp" style="margin-bottom:2rem">About <em>me</em></h2>
+      <p>I like sites that load fast, read clearly and get the phone ringing. Most of mine are for auto shops, contractors, a therapy practice and real estate agents.</p>
+      <p>I started with a CMS website development certificate at New Generation Academy, after a BS in Information Technology at Lapu-Lapu City College. Since then it's been real clients: building the site, fixing what breaks, updating content, and handling SEO and the admin around it.</p>
+      <p>I communicate early and often, and I stay with clients long term. That matters to me as much as the code.</p>
+    </div>
+    <div>
+      <p class="mono" style="color:var(--blue);margin-bottom:1rem">Recent roles</p>
+      <div class="job"><div class="d">Nov – Dec 2024</div><div><h4>The Part Broker<small>Website developer / designer</small></h4><ul><li>Built and maintained a WooCommerce store: products, cart, checkout, payments.</li><li>Tuned site speed and SEO for visibility and conversions.</li></ul></div></div>
+      <div class="job"><div class="d">Aug – Sep 2024</div><div><h4>Lendnav<small>Website developer / designer</small></h4><ul><li>Webflow lending site with custom layouts built for lead generation.</li><li>Checked behavior and responsiveness across devices.</li></ul></div></div>
+      <div class="job"><div class="d">Dec 2023 – Jun 2024</div><div><h4>Real estate client<small>Website developer / designer</small></h4><ul><li>Real Geeks site focused on lead generation and usability.</li><li>Customized property search and listings; improved mobile performance.</li></ul></div></div>
+      <div class="edu">
+        <div><b>CMS Website Developer</b><span>Certificate · New Generation Academy · 2022</span></div>
+        <div><b>BS Information Technology</b><span>Lapu-Lapu City College · 2019</span></div>
+        <div><b>ICT</b><span>Babag National High School · 2014</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <h2 class="h2 disp">Kind words</h2>
+    <div class="q-grid">
+      <blockquote><p>Cierlou built high-performing WordPress websites focused on maximizing conversions and user engagement. Their Shopify SEO work drove significant e-commerce traffic and boosted our sales. Transparent, communicative, and always delivers on time.</p><footer class="mono"><b>Angel Huffman</b> — CEO, Hoek Lab App</footer></blockquote>
+      <blockquote><p>An exceptional developer who spearheaded our real estate website: property listings, search filters, interactive maps. User-friendly interfaces and robust backend systems that enhanced our online presence and lead generation.</p><footer class="mono"><b>Christina Lowry James</b> — CEO, Real estate agency</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="mono" style="color:var(--blue);margin-bottom:1.25rem">Got a project, or a site that needs looking after?</p>
+    <p class="big disp"><a href="mailto:cierlout@gmail.com">Let's talk<span>.</span><span class="em">cierlout@gmail.com</span></a></p>
+    <div class="links">
+      <a class="btn p" href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Meeting+with+Cierlou&details=Let%27s+connect+via+Google+Meet&add=cierlout@gmail.com&location=Online+via+Google+Meet&pli=1">Book a call</a>
+      <a class="btn" href="https://api.whatsapp.com/send/?phone=639424852774">WhatsApp</a>
+      <a class="btn" href="tel:+639424852774">+63 942 485 2774</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap"><div class="foot mono"><span>© <span id="yr"></span> Cierlou Tudtud</span><span>Babag, Lapu-Lapu City, Cebu <span id="clock"></span></span></div></footer>
+
+<script>
+const sites=[
+["Royal Window Tint","royalwindowtint.com","WordPress","Window tinting","RoyalWindowTint.png","Certified window tinting for Rocklin and Sacramento, CA."],
+["Nana's Green Tea","nanasgreentealasvegas.com","Webflow","Japanese café","Nanas Green Tea.png","A modern Japanese café and global matcha brand originating from Tokyo."],
+["Miracle Minds Therapy","mmtnv.org","Webflow","Mental health practice","Miracle Minds Theraphy.png","Care for children, teens, adults and elders dealing with anxiety, depression and trauma."],
+["KM Film 508","kmfilm508.com","WordPress","Auto detailing","KMFilm.png","Auto detailing in Massachusetts, known for speed, efficiency and integrity."],
+["iDeal Protection","ideal-protection.com","WordPress","Paint protection","IDeal Protection.png","XPEL-certified shop for paint protection film, ceramic coating and window tint."],
+["Purple Flare Agency","purpleflareagency.com","WordPress","Vehicle wraps","Purple Flare.png","Las Vegas wrap shop for over a decade: paint protection, branding and vinyl wraps."],
+["Rev'd Auto Styling","revdautostyling.com","Webflow","Auto styling","RevD.png","Paint protection film, window tint and ceramic coating in Boerne, TX."],
+["C&M Home Designs","candmhomedesigns.com","WordPress","Custom homes","c&mhomes.png","Luxury custom home building and remodeling."],
+["AV Tint","tintav.com","Webflow","Window tint","AVtint.png","Warranty-backed window tint in Montclair, CA, plus windshield tint and car audio."],
+["Arrow Masonry & Exteriors","tuckpointing.com","WordPress","Masonry restoration","Arrow Masonry.png","Brick, block and stone facade restoration across Chicago."],
+["Bearded Bigfoot Detailing","beardedbigfootdetailing.com","Webflow","Auto detailing","beardedbigfoot.png","System X certified vehicle protection and detailing."],
+["Birmingham Welcome Home","birminghamwelcomehome.com","Real Geeks","Real estate","birminghamwelcomehome.png","Home buying and selling in Hoover, Alabama, with 15 years of agent experience."]
+];
+const grid=document.getElementById('grid');
+sites.forEach((s,i)=>{
+  const a=document.createElement('a');a.className='card';a.dataset.p=s[2];a.href='https://'+s[1]+'/';a.target='_blank';a.rel='noopener';
+  a.innerHTML=`<div class="bar"><i></i><i></i><i></i><span>${s[1]}</span></div><img src="${encodeURIComponent(s[4])}" alt="${s[0]} homepage" width="1520" height="725" loading="lazy"><div class="in"><div class="top mono"><span>${String(i+1).padStart(2,'0')}</span><span>${s[2]} · ${s[3]}</span></div><h3>${s[0]}</h3><p>${s[5]}</p><span class="go mono">Visit site ↗</span></div>`;
+  grid.appendChild(a);
+});
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+  grid.querySelectorAll('.card').forEach(c=>c.hidden=!(b.dataset.f==='all'||c.dataset.p===b.dataset.f));
+});
+const items=['WordPress','Webflow','Shopify','Real Geeks','Salesforce','SEO','WooCommerce','Elementor'];
+document.getElementById('marq').innerHTML=(items.map(t=>`<span>${t}</span><span>/</span>`).join('')).repeat(4);
+document.getElementById('yr').textContent=new Date().getFullYear();
+const clock=document.getElementById('clock');
+const tick=()=>{clock.textContent='· '+new Date().toLocaleTimeString('en-US',{timeZone:'Asia/Manila',hour:'2-digit',minute:'2-digit'})};tick();setInterval(tick,30000);
+</script>
+</body>
+</html>
